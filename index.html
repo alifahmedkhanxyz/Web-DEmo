@@ -3,43 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Méridien Dhaka | Official Website</title>
+    <title>Fragrance Aura | Luxury Perfume Collection</title>
     <style>
-        /* CSS অংশ: স্টাইল এবং ডিজাইন */
+        /* CSS অংশ: ডিজাইন এবং স্টাইল */
+        :root {
+            --gold: #d4af37;
+            --dark: #1a1a1a;
+            --light: #f9f9f9;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Playfair Display', serif;
         }
 
         body {
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: var(--light);
+            color: var(--dark);
         }
 
         header {
-            background-color: #1a1a1a;
-            color: white;
-            padding: 20px 0;
+            background-color: white;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         header h1 {
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            font-size: 2.5rem;
+            letter-spacing: 5px;
+            color: var(--dark);
         }
 
-        /* Hero Section */
+        /* Hero Banner */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            height: 450px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -47,84 +54,98 @@
             text-align: center;
         }
 
-        .hero-text h2 {
+        .hero-content h2 {
             font-size: 3rem;
             margin-bottom: 10px;
         }
 
-        /* Room Section */
+        /* Product Section */
         .container {
-            width: 80%;
+            max-width: 1200px;
             margin: 50px auto;
+            padding: 0 20px;
         }
 
-        .section-title {
+        .search-bar {
             text-align: center;
             margin-bottom: 40px;
-            font-size: 2rem;
-            color: #1a1a1a;
         }
 
-        .rooms-grid {
+        .search-bar input {
+            padding: 12px 20px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        .perfume-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
-        .room-card {
+        .card {
             background: white;
-            border-radius: 8px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            text-align: center;
+            padding-bottom: 20px;
+            border: 1px solid #eee;
         }
 
-        .room-card:hover {
+        .card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        .room-card img {
+        .card img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .room-info {
+            height: 250px;
+            object-fit: contain;
+            background: #fdfdfd;
             padding: 20px;
         }
 
-        .room-info h3 {
+        .card h3 {
+            margin: 15px 0 5px;
+            font-size: 1.4rem;
+        }
+
+        .brand {
+            color: #888;
+            font-style: italic;
             margin-bottom: 10px;
-            color: #b59410; /* Gold color for luxury feel */
         }
 
         .price {
-            font-weight: bold;
             font-size: 1.2rem;
-            color: #333;
-            margin: 15px 0;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 15px;
         }
 
-        .book-btn {
-            background-color: #1a1a1a;
+        .buy-btn {
+            background-color: var(--dark);
             color: white;
-            padding: 10px 20px;
+            padding: 10px 25px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            width: 100%;
-            transition: background 0.3s;
+            transition: 0.3s;
         }
 
-        .book-btn:hover {
-            background-color: #b59410;
+        .buy-btn:hover {
+            background-color: var(--gold);
         }
 
         footer {
-            background-color: #1a1a1a;
+            background: var(--dark);
             color: white;
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 0;
             margin-top: 50px;
         }
     </style>
@@ -132,60 +153,90 @@
 <body>
 
     <header>
-        <h1>LE MÉRIDIEN DHAKA</h1>
+        <h1>FRAGRANCE AURA</h1>
     </header>
 
     <section class="hero">
-        <div class="hero-text">
-            <h2>Experience Luxury in Dhaka</h2>
-            <p>Your sanctuary of style and comfort</p>
+        <div class="hero-content">
+            <h2>Find Your Signature Scent</h2>
+            <p>Exclusive collection of world-class perfume brands</p>
         </div>
     </section>
 
     <div class="container">
-        <h2 class="section-title">Our Premium Rooms</h2>
-        
-        <div class="rooms-grid" id="room-list">
-            <div class="room-card">
-                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Deluxe Room">
-                <div class="room-info">
-                    <h3>Deluxe King Room</h3>
-                    <p>City view with floor-to-ceiling windows and premium amenities.</p>
-                    <p class="price">Price: ৳18,500 / night</p>
-                    <button class="book-btn" onclick="bookRoom('Deluxe King Room')">Book Now</button>
-                </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" onkeyup="searchPerfume()" placeholder="Search by brand or name...">
+        </div>
+
+        <div class="perfume-grid" id="perfumeGrid">
+            <div class="card" data-name="Sauvage">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Dior">
+                <div class="brand">Dior</div>
+                <h3>Sauvage Elixir</h3>
+                <p class="price">৳18,500</p>
+                <button class="buy-btn" onclick="orderNow('Dior Sauvage')">Add to Cart</button>
             </div>
 
-            <div class="room-card">
-                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Executive Suite">
-                <div class="room-info">
-                    <h3>Executive Suite</h3>
-                    <p>Spacious living area, lounge access, and marble bathroom.</p>
-                    <p class="price">Price: ৳28,000 / night</p>
-                    <button class="book-btn" onclick="bookRoom('Executive Suite')">Book Now</button>
-                </div>
+            <div class="card" data-name="Bleu de Chanel">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Chanel">
+                <div class="brand">Chanel</div>
+                <h3>Bleu de Chanel</h3>
+                <p class="price">৳16,200</p>
+                <button class="buy-btn" onclick="orderNow('Bleu de Chanel')">Add to Cart</button>
             </div>
 
-            <div class="room-card">
-                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Presidential Suite">
-                <div class="room-info">
-                    <h3>Presidential Suite</h3>
-                    <p>The ultimate luxury with private kitchen and dining area.</p>
-                    <p class="price">Price: ৳85,000 / night</p>
-                    <button class="book-btn" onclick="bookRoom('Presidential Suite')">Book Now</button>
-                </div>
+            <div class="card" data-name="Aventus">
+                <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Creed">
+                <div class="brand">Creed</div>
+                <h3>Aventus</h3>
+                <p class="price">৳38,000</p>
+                <button class="buy-btn" onclick="orderNow('Creed Aventus')">Add to Cart</button>
+            </div>
+
+            <div class="card" data-name="Black Orchid">
+                <img src="https://images.unsplash.com/photo-1557170334-a7c3c467b1f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Tom Ford">
+                <div class="brand">Tom Ford</div>
+                <h3>Black Orchid</h3>
+                <p class="price">৳22,500</p>
+                <button class="buy-btn" onclick="orderNow('Tom Ford Black Orchid')">Add to Cart</button>
+            </div>
+            
+            <div class="card" data-name="Eros">
+                <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Versace">
+                <div class="brand">Versace</div>
+                <h3>Eros Flame</h3>
+                <p class="price">৳11,000</p>
+                <button class="buy-btn" onclick="orderNow('Versace Eros')">Add to Cart</button>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Le Méridien Dhaka. All rights reserved.</p>
-        <p>Airport Road, Nikunja 2, Khilkhet, Dhaka 1229, Bangladesh</p>
+        <p>&copy; 2024 Fragrance Aura. All Rights Reserved.</p>
+        <p>Premium Perfume Importer, Banani, Dhaka.</p>
     </footer>
 
     <script>
-        function bookRoom(roomName) {
-            alert("Thank you for choosing the " + roomName + "! Our team will contact you soon for confirmation.");
+        // অর্ডার করার ফাংশন
+        function orderNow(name) {
+            alert(name + " আপনার কার্টে যোগ করা হয়েছে! ধন্যবাদ।");
+        }
+
+        // সার্চ করার ফাংশন (লাইভ ফিল্টার)
+        function searchPerfume() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('card');
+
+            for (let i = 0; i < cards.length; i++) {
+                let name = cards[i].getAttribute('data-name').toLowerCase();
+                let brand = cards[i].querySelector('.brand').innerText.toLowerCase();
+                
+                if (name.includes(input) || brand.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
         }
     </script>
 
